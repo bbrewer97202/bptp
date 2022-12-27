@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Route {
+  id             Int      @id @default(autoincrement())
+  name           String
+  description    String
+  epicRating     Int?
+  distanceHours  Decimal?
+  lengthMiles    Decimal?
+  permitRequired Boolean?
+  dirtRoadMiles  Decimal?
+  elevationGain  Int?
+  percentageBurn Int?
+  overnight      Boolean  @default(false)
+  region         Region   @relation(fields: [regionId], references: [id])
+  notes          String?  @db.Text
+  created        DateTime @default(now())
+  regionId       Int
+}
+
+model Region {
+  id   Int    @id @default(autoincrement())
+  name String
+  Route Route[]
+}
