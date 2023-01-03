@@ -1,0 +1,18 @@
+.regionlist-container {
+  padding: 1rem;
+}
+
+.regionlist-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.regionlist-item {
+  cursor: pointer;
+  padding: 0 0 0.4rem 0;
+}
+
+.regionlist-item:hover {
+  text-decoration: underline;
+}
