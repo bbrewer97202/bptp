@@ -1,5 +1,0 @@
-{
-  "extends": "bptp-tsconfig/react-library.json",
-  "include": ["stories", "node_modules/stories"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
