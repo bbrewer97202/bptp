@@ -8,10 +8,11 @@ interface Region {
 }
 
 interface RegionListProps {
-  children: React.ReactNode | React.ReactNode[] | undefined | null;
+  // children: React.ReactNode | React.ReactNode[] | undefined | null;
   onSelect?: (id: string) => void;
   regions: Region[];
   title?: string;
+  boardBook?: String;
 }
 
 const regionSort = (a:Region, b:Region) => {
@@ -43,7 +44,8 @@ export const RegionList = (props: RegionListProps) => {
   return (
     <div className={styles.container}>
       {title && <h3 className={styles.title}>{title}</h3>}
-      <div>__testing__!!!</div>
+      {props.boardBook && <h5>{props.boardBook}</h5>}
+      <div>INSIDE REGION LIST 123</div>
       <ul className={styles.list}>{regionItems}</ul>
     </div>
   );

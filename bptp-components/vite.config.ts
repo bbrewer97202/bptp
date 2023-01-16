@@ -1,10 +1,19 @@
-import { defineConfig, optimizeDeps } from 'vite'
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+import { defineConfig } from 'vite'
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [react(), dts()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+    }
+  },
   build: {
     // emptyOutDir: true,
     outDir: 'dist',

@@ -15,8 +15,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
-    // "baseUrl": "dist"
+    "baseUrl": ".",
+    "paths": {
+      "bptp-components": ["node_modules/bptp-components/src"],
+      "bptp-components/*": ["node_modules/bptp-components/src/*"],
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

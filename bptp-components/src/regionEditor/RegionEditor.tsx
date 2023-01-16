@@ -8,7 +8,7 @@ interface Region {
 }
 
 interface RegionEditorProps {
-  children: React.ReactNode | React.ReactNode[] | undefined | null;
+  // children: React.ReactNode | React.ReactNode[] | undefined | null;
   region: Region;
 }
 

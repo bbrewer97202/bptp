@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 // import GetServerSideProps from 'next';
 // import graphQLQuery from '../services/graphql.services';
 // import RegionList from '../components/regionList';
-import { RegionList } from 'bptp-components';
+import { RegionEditor, RegionList } from 'bptp-components';
 
 interface HomeProps {
   hello: string
@@ -22,7 +22,8 @@ export default function Home(props:HomeProps) {
       </Head>
       <main className={styles.main}>
         <div>hello: {props.hello}</div>
-        <RegionList regions={[{ id: '1', name: "hello region"}]}><div>hi</div></RegionList>
+        <RegionList regions={[{ id: '1', name: "hello region........."}]} onSelect={() => { console.log('one') }} />
+        <RegionList akd={true} boardBook={'jsss'} regions={[{ id: 'true', name: 'Goat Rocks' }]} onSelect={() => { console.log('two') }}/>
       </main>
     </>
   )
